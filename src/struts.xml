@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="false" />
+	<constant name="struts.action.extension" value="" />
+
+	<package name="com.developpez.actions"  namespace="/" extends="struts-default">
+       
+        <!-- Action de l'action de réference -->   
+        <default-action-ref name="saisir_Developpeur"/> 
+        
+
+
+<action name="anciensparentreprise" 
+		class="com.developpez.actions.AnciensparEntAction"  >
+		<result name="success">/anciensparentreprise.jsp</result>
+	</action>
+
+<action name="libelle" 
+		class="com.developpez.actions.libelleAction"  >
+		<result name="success">/libelle.jsp</result>
+	</action>
+
+<action name="carriereancien" 
+		class="com.developpez.actions.carriereancienAction" >
+		<result name="success">/carriereancien.jsp</result>
+	</action>
+
+
+	<action name="nouvelleEntreprise" class="com.developpez.actions.entrepriseCarriereAction">
+	<result name="success">/carriereancien.jsp</result>
+	</action>
+
+
+	<action name="carriere" class="com.developpez.actions.carriereancienAction" >
+	<result name="success">/carriereancien.jsp</result>
+	</action>
+
+
+
+
+
+
+
+
+
+<action name="entreprises" 
+		class="com.developpez.actions.ListerEntAction"  >
+		<result name="success">saisir_Developpeur.jsp</result>
+	</action>
+
+
+	<action name="index" class="com.developpez.actions.WelcomeAction">
+	<result name="success">saisir_Developpeur.jsp</result>
+	</action>
+
+        
+        <action name="saisir_Developpeur">
+          <result>/saisir_Developpeur.jsp</result>
+        </action>
+        
+       
+       
+        
+        
+        
+       
+           <action name="promos/" class="com.developpez.actions.ListerAction" 
+                method="execute">
+            <result name="success" >/promos.jsp</result>
+             <result name="input">/saisir_Developpeur.jsp</result> 
+           
+        </action>
+        
+        
+          <action name="promos" class="com.developpez.actions.PromoAction" 
+                method="enregistrer">
+            <result name="success" >/promos.jsp</result>
+             <result name="input">/saisir_Developpeur.jsp</result> 
+           
+        </action>
+        
+      
+        
+        
+        
+        
+        
+        
+         <action name="entreprises/" class="com.developpez.actions.ListerEntAction" 
+                method="execute">
+            <result name="success" >/entreprises.jsp</result>
+            <result name="input">/saisir_Developpeur.jsp</result> 
+            
+        </action>
+        
+        
+        
+          <action name="entreprises" class="com.developpez.actions.EntrepriseAction" 
+                method="enregistrer">
+            <result name="success" >/entreprises.jsp</result>
+            <result name="input">/saisir_Developpeur.jsp</result>  
+        </action>
+        
+        
+        
+        
+        
+          <action name="anciens/" class="com.developpez.actions.ListerAncAction" >
+            <result name="success" >/anciens.jsp</result>
+            <result name="input">/saisir_Developpeur.jsp</result> 
+            
+        </action>
+        
+        
+        
+          <action name="anciens" class="com.developpez.actions.AncienAction" 
+                method="enregistrer">
+            <result name="success" >/anciens.jsp</result>
+            <result name="input">/saisir_Developpeur.jsp</result>  
+        </action>
+        
+ 	</package>   
+ </struts>   
+    
